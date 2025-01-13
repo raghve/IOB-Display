@@ -1,45 +1,79 @@
 <div class="full-screen-container">
   <!-- Header -->
   <div class="header" *ngIf="!isFullscreen || isCancelled">
-    <h1>Visitor Dashboard</h1>
 
-    <!-- Dropdown Section -->
-    <div class="dropdown-section">
-      <label for="deviceId">Select Device ID:</label>
-      <select id="deviceId" (change)="onDeviceSelect($event)">
-        <option *ngFor="let device of deviceIds" [value]="device">{{ device }}</option>
-      </select>
+    <!-- Logo Section -->
+    <div class="logo">
+      <img [src]="brandImagePath" alt="Brand Logo"  (dblclick)="toggleDropdown()"/>
     </div>
+
+    <!-- Title Section -->
+<div class="title">
+  <h2 [ngClass]="{'visitor-title': latestImageData?.type == 0, 'vendor-title': latestImageData?.type == 1}">
+    {{ latestImageData ? (latestImageData.type == 0 ? 'Latest Visitor Details' : 'Latest Vendor Details') : 'Dashboard' }}
+</h2>
+</div>
+
+<!-- Dropdown Section -->
+<div class="dropdown-section" *ngIf="showDropdown">
+  <label for="deviceId">Device:</label>
+  <select id="deviceId" (change)="onDeviceSelect($event)">
+    <option *ngFor="let device of deviceIds" [value]="device">{{ device }}</option>
+  </select>
+</div>
+
   </div>
 
- 
+</div>
+
+<!-- No Data Container -->
+<div class="no-data-container" *ngIf="noData">
+  <img
+    [src]="noDataImage"
+    alt="No Data Found"
+    class="no-data-image"
+  />
+  <h1 class="no-data-title">No Data Found</h1>
+  <p class="no-data-message">
+    Sorry, we couldn't find any data to display here. Please try again later.
+  </p>
+  
+</div>
 
 
  <!-- Image Card -->
 
+  <div class="background-container">
     <!-- Action Buttons -->
-    <div class="action-buttons" *ngIf="latestImageData">
+    <!-- <div class="action-buttons" *ngIf="latestImageData">
       <button (click)="enterFullscreen()" *ngIf="!isFullscreen" class="icon-button">
-        <i class="fas fa-expand"></i> <!-- Full Screen Icon -->
+        <i class="fas fa-expand"></i> 
       </button>
       <button (click)="exitFullscreen()" *ngIf="isFullscreen && !isCancelled" class="icon-button">
-        <i class="fas fa-compress"></i> <!-- Minimize Icon -->
+        <i class="fas fa-compress"></i> 
       </button>
       <button (click)="cancelFullscreen()" class="icon-button">
-        <i class="fas fa-times"></i> <!-- Cancel Icon -->
+        <i class="fas fa-times"></i> 
       </button>
-    </div>
+    </div> -->
     <!-- Action Buttons -->
 
-  <div *ngIf="latestImageData" class="full-screen-card" [class.fullscreen]="isFullscreen && !isCancelled">
-    <img [src]="latestImageData.base64Image" alt="Latest Image" class="full-image" />
-    <div class="full-details">
-      <h2>Latest Visitor Details</h2>
-      <p><strong>Visitor Name:</strong> <span>{{ latestImageData.name }}</span></p>
-      <p><strong>Visitor ID:</strong> <span>{{ latestImageData.enrollId }}</span></p>
-      <p><strong>IN Time:</strong> <span>{{ latestImageData.timestamp }}</span></p>
+    <div *ngIf="latestImageData" class="full-screen-card" [class.fullscreen]="isFullscreen && !isCancelled">
+     <img [src]="latestImageData.base64Image" alt="Latest Image" class="full-image" />
+     <div class="full-details">
+        <p><strong>Name:</strong> <span>{{ latestImageData.name }}</span></p>
+        <p><strong>Company:</strong> <span>{{ latestImageData.companyName }}</span></p>
+        <p><strong>Department:</strong> <span>{{ latestImageData.department }}</span></p>
+        <p><strong>Valid Till:</strong> <span>{{ latestImageData.expectedOutTime }}</span></p>
+        <!-- <p><strong>Type:</strong> <span>{{ latestImageData.type }}</span></p> -->
+     </div>
     </div>
+  </div>
+
+
+
+
+  
 
     
-  </div>
-</div>
+

@@ -1,6 +1,6 @@
 /* Full-Screen Layout */
 .full-screen-container {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -12,37 +12,72 @@
   }
 
   .header {
-    background-color: #216583;
+    background-color: #dfedf3;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space elements evenly: logo, title, dropdown */
+    padding: 0px 20px; /* Add some padding */
+    border-bottom: 1px solid #ddd; /* Optional: Add a subtle bottom border */
+  }
+
+  .logo img {
+    width: 80px; /* Adjust logo size */
+    height: auto;
+  }
+  
+  .title {
+    text-align: center;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .title h2{
+    font-size: 3rem;
+    font-weight: bold;
   }
   
   h1 {
     text-align: center;
-    color: #eee6e6;
-    margin: 10px 0;
+    color: #216583;
     font-size: 2.5vw;
   }
   
   .dropdown-section {
     text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 0.85em;
   }
   
   label {
-    font-size: 1.5vw;
-    margin-right: 1vw;
+    font-size: 0.85em;
+    margin-right: 10px;
     color: #eee6e6
   }
   
   select {
-    padding: 10px 15px;
-    font-size: 1.5vw;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 10vw;
+    padding: 3px 8px; /* Make the dropdown smaller */
+    font-size: 0.85em; /* Adjust dropdown text size */
+    height: auto; /* Ensure dropdown height adapts */
+    border: 1px solid #ccc; /* Optional: Customize border */
+    border-radius: 4px; /* Slight rounding for modern look */
+
   }
+
+  .background-container {
+      
+    width: 100%;
+    height: 120vh; 
+    background-image: linear-gradient(rgba(227, 239, 248, 0.8), rgba(227, 239, 248, 0.8)); /* Update with your actual image name */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  
+}
 
   .action-buttons {
     text-align: right;
+    font-size:xx-small;
     box-sizing: border-box;
     background: #f9fcff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -50,43 +85,42 @@
   
   /* Full-Screen Card */
   .full-screen-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+    display: block; /* Ensure block-level for centering */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center the content inside */
     padding: 1vw;
     gap: 1vw;
     box-sizing: border-box;
-    background: #f9fcff;
-    border-top: 2px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content; /* Adjust width to fit content */
+}
+  
 
+
+  .visitor-title {
+    color: darkgreen;  /* Dark Grren  font color for visitors */
+  }
+  
+  .vendor-title {
+    color: blue; /* Blue font color for vendors */
   }
   
   .full-image {
     max-width: 100%;
     max-height: 100%;
-    width: 50vw;
-    height: 33vw;
+    width: 35vw;
+    height: 20vw;
     border-radius: 2vw;
   }
   
   .full-details {
     flex: 1;
-    padding: 1.5vw;
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: left; /* Align text within the container */
+    width: fit-content;
     
   }
 
-  
-  .full-details h2 {
-    font-size: 4vw;
-    color: #216583;
-    margin-bottom: 3vw;
-    text-align: center;
-  }
-
-
-  
   .full-details span {
     font-size: 3vw;
     
@@ -94,17 +128,44 @@
 
   .full-details p {
     font-size: 2.5vw;
-    margin: 1.5vw 0;
     color: rgb(125, 131, 71);
     display: grid;
-    grid-template-columns: 20vw 1fr; /* Fixed width for labels and flexible for content */
+    grid-template-columns: 16vw 1fr; /* Fixed width for labels and flexible for content */
     gap: 1vw;
-    margin: 1vw 0;
   }
   
   strong {
     color:  #216583;
   }
+
+
+  /* No Data Container CSS */
+  .no-data-container {
+    text-align: center;
+    margin-top: 50px;
+    color: #555;
+    font-family: Arial, sans-serif;
+  }
+  
+  .no-data-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .no-data-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .no-data-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+
+  
 
 
   
@@ -114,6 +175,10 @@
       flex-direction: column;
       text-align: center;
       gap: 1.5vw;
+    }
+
+    .title h2 {
+      font-size: 3vw;
     }
   
     .full-image {
@@ -133,4 +198,6 @@
       font-size: 2vw;
     }
   }
+
+
   
