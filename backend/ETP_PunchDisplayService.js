@@ -19,7 +19,10 @@ if (command === 'install') {
   svc.on('install', () => {
     log.info('ETP_PunchDisplayService installed successfully.');
     console.log('ETP_PunchDisplayService installed successfully!');
-    svc.start(); // Start the service after installation
+
+    // Ensure the service starts after installation
+    svc.start();
+    console.log('ETP_PunchDisplayService started after installation.');
   });
 
   // Listen for the "alreadyinstalled" event
@@ -30,6 +33,20 @@ if (command === 'install') {
 
   // Install the service
   svc.install();
+} else if (command === 'restart') {
+  // Stop the service first
+  svc.on('stop', () => {
+    log.info('ETP_PunchDisplayService stopped for restart.');
+    console.log('ETP_PunchDisplayService stopped for restart.');
+
+    // Start the service again
+    svc.start();
+    log.info('ETP_PunchDisplayService restarted successfully.');
+    console.log('ETP_PunchDisplayService restarted successfully!');
+  });
+
+  // Stop the service
+  svc.stop();
 } else if (command === 'uninstall') {
   // Listen for the "uninstall" event
   svc.on('uninstall', () => {
@@ -47,4 +64,7 @@ if (command === 'install') {
   console.log('Custom log messages have been sent to the Windows Event Viewer.');
 } else {
   console.log('Invalid command! Use one of the following:');
+  console.log('  node ETP_PunchDisplayService.js install');
+  console.log('  node ETP_PunchDisplayService.js uninstall');
+  console.log('  node ETP_PunchDisplayService.js log');
 }

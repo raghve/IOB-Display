@@ -16,28 +16,6 @@ const backendConfig = require('./backendConfig'); // Importing the backend confi
 const folderPath = backendConfig.folderPath; // Folder to watch
 
 // Enable CORS for all domains (or specify a specific domain)
-// app.use(cors({
-//   origin: 'http://localhost:4200', // Allow only the Angular app to access the backend
-//   methods: ['GET', 'POST'],
-//   credentials: true // Enable cookies if needed
-// }));
-
-// // Enable CORS
-// const io = socketIo(server, {
-//   cors: {
-//     origin: "http://localhost:4200", // Angular app URL
-//     methods: ["GET", "POST"],
-//   },
-// });
-
-// io.on('connection', (socket) => {
-//   console.log('A user connected');
-//   socket.on('disconnect', () => {
-//     console.log('User disconnected');
-//   });
-// });
-
-// Enable CORS for all domains (or specify a specific domain)
 app.use(cors({
   origin: backendConfig.frontendUrl, // Allow only the Angular app to access the backend
   methods: ['GET', 'POST'],
@@ -124,11 +102,6 @@ watcher.on('add', (filePath) => {
 });
 
 
-
-
-// Serve static files from Angular app
-// app.use(express.static(path.join(__dirname, '../dist/file-watcher-app')));
-
 // API to get the latest image for a selected Device ID and current date
 app.get('/get-latest-image/:deviceId', (req, res) => {
   const deviceId = req.params.deviceId;
@@ -140,7 +113,7 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
     return res.status(404).send('Device folder not found.');
   }
 
-  fs.readdir(deviceFolderPath, (err, files) => {
+  fs.readdir(deviceFolderPath, async (err, files) => {
     if (err) {
       console.error('Error reading folder:', err);
       return res.status(500).send('Error reading folder.');
@@ -150,31 +123,37 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
       return res.status(404).send('No files found.');
     }
 
+    let latestMtime = 0;
+    let latestImage = null;
+    let latestFile = null;
     try {
-      // Sort files by timestamp (latest first)
-      files.sort((a, b) => {
-        const parseTimestamp = (fileName) => {
-          const parts = fileName.replace('.jpg', '').split('~');
-          // if (parts.length !== 5) {
-          //   throw new Error(`Invalid file format: ${fileName}`);
-          // }
-          const timestamp = parts[3];    // Expected Out Time is at 4th part
-          if (!/^\d{14}$/.test(timestamp)) {
-            throw new Error(`Invalid timestamp: ${timestamp}`);
-          }
-          return new Date(
-            timestamp.replace(
-              /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,
-              '$1-$2-$3T$4:$5:$6'
-            )
-          ) || null;
-        };
-
-        return parseTimestamp(b) - parseTimestamp(a);
-      });
-
-      const latestFile = files[0]; // Get the latest file
-      console.log("latest data", latestFile);
+      // Get the latest file in the folder
+      for (const file of files) {
+        const filePath = path.join(deviceFolderPath, file);
+  
+        // Await fs.stat inside a promise to make it synchronous
+        const stats = await new Promise((resolve, reject) => {
+          fs.stat(filePath, (err, stats) => {
+            if (err) {
+              console.log(`Error reading file stats for ${file}:`, err);
+              return reject(err);
+            }
+            resolve(stats);
+          });
+        });
+  
+        // If it's a file and the modification time is more recent, update the latest file
+        if (stats.isFile() && stats.mtimeMs > latestMtime) {
+          latestMtime = stats.mtimeMs;
+          latestImage = file;
+          console.log("LatestImage :", latestImage, "Latest Mtime :", latestMtime);
+        }
+      }
+  
+      // After iterating over all files, set the latest file
+      latestFile = latestImage;
+      
+      console.log("Latest data :", latestFile);
       const filePath = path.join(deviceFolderPath, latestFile);
       console.log('Filepath', filePath);
       //Name~CompanyName~Department~ExpectedOuttime~type
@@ -215,15 +194,6 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
 });
 
 
-
-// Fallback route for Angular's routing
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../dist/file-watcher-app/index.html'));
-// });
-
-// Start the server
-
-
 // Function to format name (add space between first and last name)
 function formatName(name) {
   return name.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -250,11 +220,7 @@ function formatTimestamp(timestamp) {
 function parseFilePath(filePath) {
   const fileName = path.basename(filePath, '.jpg'); // Extract the file name without the extension
   const [name, companyName, department, expectedOutTime, type] = fileName.split('~'); // Split by `~`
-  
-  // if (!name || !companyName || !department || !expectedOutTime || !type) {
-  //   throw new Error(`Invalid file name format: ${fileName}`);
-  // }
-  
+
   return {
     name: formatName(name) || null,
     companyName: formatName(companyName) || null,
@@ -267,5 +233,5 @@ function parseFilePath(filePath) {
 const PORT = backendConfig.port;
 const HOST = backendConfig.host;
   server.listen(PORT,() => {
-      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Server running on http://${HOST}:${PORT}`);
   });
