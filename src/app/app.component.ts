@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { FileWatcherService } from './file-watcher.service';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { MaterialUIModule } from './material-ui/material-ui.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { interval, Subscription } from 'rxjs';
 
@@ -15,7 +21,13 @@ import { interval, Subscription } from 'rxjs';
   imports: [
     RouterOutlet,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialUIModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -34,13 +46,25 @@ export class AppComponent implements OnInit {
   isCancelled = false;
   showDropdown:boolean = true;
   noData:boolean = false;
+  showVisitorDetails:boolean = false;
+  noMaterial:boolean = false;
+  showMaterial:boolean = false;
+  qrCodeId: string = '';
+  materialList:any = '';
+  errorMessage:any = '';
+  deatilsData:any = '';
+  loading: boolean = false;
+  materialContent:boolean = false;
   
+  @ViewChild('messageInput') messageInput!: ElementRef;
 
   latesimagedat:any = 0;
 
+  displayedColumns: string[] = ['index', 'materialType', 'SerialNumber', 'Quantity', 'ItemScope', 'Detail', 'MaterialApprovesStatus'];
+  dataSource:[] = [];
+
 
   private fetchIntervalSubscription: Subscription | null = null;
-  
 
   constructor(
     private fileWatcherService: FileWatcherService,
@@ -89,6 +113,11 @@ export class AppComponent implements OnInit {
   }
 
   onDeviceSelect(event: any): void {
+    this.showVisitorDetails=true;
+    this.materialContent=false;
+    this.qrCodeId='';
+    this.materialList=false;
+    this.noMaterial=false;
     const selectedDevice = (event.target as HTMLSelectElement).value;
     this.selectedDevice = selectedDevice;
     console.log('Selected Device:', selectedDevice);
@@ -127,6 +156,7 @@ export class AppComponent implements OnInit {
     this.fileWatcherService.onFileAdded((data) => {
       console.log("---------------Device Popped:--------------", data.deviceId)
       if (data.deviceId === this.selectedDevice) {
+        this.noData= false;
         this.latestImageData = data;
       }
     });
@@ -161,11 +191,76 @@ export class AppComponent implements OnInit {
     if (document.fullscreenElement) {
       document.exitFullscreen();
     }
-    
-    
+  }
+
+  // Material Search
+  showMaterialserach() {
+    this.showVisitorDetails=false;
+    this.latestImageData='';
+    this.selectedDevice='None';
+    this.materialContent=true;
+    this. showMaterial = true;
   }
 
 
+  
+  searchMaterial() {
+    this.loading = true;
+    console.log("Input Value :", this.qrCodeId);
+  
+    let timeout = setTimeout(() => {
+      alert("Request timed out after 5 seconds. Please try again.");
+      this.loading = false;
+    }, 8000);
+  
+    this.fileWatcherService.getmaterialList(this.qrCodeId).subscribe({
+      next: (data) => {
+        clearTimeout(timeout); // Clear timeout if data is received in time
+        console.log("Data :", data);
+        if (data.length == 0) {
+          this.loading = false;
+          this.materialList = [];
+          this.dataSource = [];
+          this.deatilsData = null;
+          this.noMaterial = true;
+        } else {
+          this.loading = false;
+          this.noMaterial = false;
+          this.materialList = data.materialList;
+          this.deatilsData = data.details;
+          this.dataSource = data.materialList;
+          this.errorMessage = null;
+          console.log("material Data :", this.dataSource);
+          console.log("Details :", this.deatilsData);
+        }
+      },
+      error: (error) => {
+        clearTimeout(timeout); // Clear timeout on error response
+        console.log('Error fetching material list:', error);
+        this.errorMessage = error.error.message || 'An error occurred!';
+        this.materialList = null;
+        this.deatilsData = null;
+        this.noMaterial=true;
+        this.loading=false;
+        this.loading = false;
+      }
+    });
+  
+    this.qrCodeId = '';
+    this.focusInput();
+  }
+  
+  clearInput() {
+    this.qrCodeId='';
+    this.materialList=false;
+    this.noMaterial=false;
+    this.focusInput();  
+      
+  }
+
+  focusInput(): void {
+    this.messageInput.nativeElement.focus();
+  }
    
 }
   

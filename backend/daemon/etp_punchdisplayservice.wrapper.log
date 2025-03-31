@@ -18,3 +18,487 @@
 2025-01-16 18:43:14 - Finished etp_punchdisplayservice.exe
 2025-01-16 18:43:16 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2025-01-16 18:43:16 - Started 22124
+2025-01-16 18:59:58 - Stopping etp_punchdisplayservice.exe
+2025-01-16 18:59:58 - ProcessKill 22124
+2025-01-16 18:59:58 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-17 10:13:31 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-17 10:13:31 - Started 12228
+2025-01-17 18:52:08 - Stopping etp_punchdisplayservice.exe
+2025-01-17 18:52:08 - ProcessKill 12228
+2025-01-17 18:52:08 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-18 11:53:22 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-18 11:53:22 - Started 12560
+2025-01-18 18:18:25 - Stopping etp_punchdisplayservice.exe
+2025-01-18 18:18:25 - ProcessKill 12560
+2025-01-18 18:18:26 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-19 17:24:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-19 17:24:18 - Started 12336
+2025-01-19 21:34:46 - Stopping etp_punchdisplayservice.exe
+2025-01-19 21:34:46 - ProcessKill 12336
+2025-01-19 21:34:46 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-20 10:12:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-20 10:12:06 - Started 12348
+2025-01-20 18:40:08 - Stopping etp_punchdisplayservice.exe
+2025-01-20 18:40:08 - ProcessKill 12348
+2025-01-20 18:40:08 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-21 10:19:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-21 10:19:48 - Started 12400
+2025-01-21 18:40:52 - Stopping etp_punchdisplayservice.exe
+2025-01-21 18:40:52 - ProcessKill 12400
+2025-01-21 18:40:52 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-22 10:06:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-22 10:06:48 - Started 11812
+2025-01-22 10:08:25 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-22 10:08:26 - Started 12080
+2025-01-22 18:36:03 - Stopping etp_punchdisplayservice.exe
+2025-01-22 18:36:03 - ProcessKill 12080
+2025-01-22 18:36:04 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-22 20:13:52 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-22 20:13:52 - Started 12484
+2025-01-22 20:57:03 - Stopping etp_punchdisplayservice.exe
+2025-01-22 20:57:03 - ProcessKill 12484
+2025-01-22 20:57:04 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-23 11:05:57 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-23 11:05:58 - Started 9556
+2025-01-23 15:36:20 - Stopping etp_punchdisplayservice.exe
+2025-01-23 15:36:20 - ProcessKill 9556
+2025-01-23 15:36:20 - Found child process: 12336 Name: conhost.exe
+2025-01-23 15:36:20 - Found child process: 13540 Name: node.exe
+2025-01-23 15:36:20 - Stopping process 12336
+2025-01-23 15:36:20 - Send SIGINT 12336
+2025-01-23 15:36:20 - SIGINT to 12336 failed - Killing as fallback
+2025-01-23 15:36:20 - Stopping process 13540
+2025-01-23 15:36:20 - Send SIGINT 13540
+2025-01-23 15:36:20 - SIGINT to 13540 failed - Killing as fallback
+2025-01-23 15:36:20 - Stopping process 9556
+2025-01-23 15:36:20 - Send SIGINT 9556
+2025-01-23 15:36:20 - SIGINT to 9556 failed - Killing as fallback
+2025-01-23 15:36:20 - Finished etp_punchdisplayservice.exe
+2025-01-24 09:50:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-24 09:50:18 - Started 12584
+2025-01-24 09:54:29 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-24 09:54:29 - Started 12192
+2025-01-24 14:04:48 - Stopping etp_punchdisplayservice.exe
+2025-01-24 14:04:48 - ProcessKill 12192
+2025-01-24 14:04:48 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-24 14:05:33 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-24 14:05:33 - Started 6056
+2025-01-24 17:12:13 - Stopping etp_punchdisplayservice.exe
+2025-01-24 17:12:13 - ProcessKill 6056
+2025-01-24 17:12:13 - Found child process: 6092 Name: conhost.exe
+2025-01-24 17:12:13 - Found child process: 7248 Name: node.exe
+2025-01-24 17:12:13 - Stopping process 6092
+2025-01-24 17:12:13 - Send SIGINT 6092
+2025-01-24 17:12:13 - SIGINT to 6092 failed - Killing as fallback
+2025-01-24 17:12:13 - Stopping process 7248
+2025-01-24 17:12:13 - Send SIGINT 7248
+2025-01-24 17:12:13 - SIGINT to 7248 failed - Killing as fallback
+2025-01-24 17:12:13 - Stopping process 6056
+2025-01-24 17:12:13 - Send SIGINT 6056
+2025-01-24 17:12:13 - SIGINT to 6056 failed - Killing as fallback
+2025-01-24 17:12:13 - Finished etp_punchdisplayservice.exe
+2025-01-24 22:49:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-24 22:49:24 - Started 6088
+2025-01-24 22:51:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-24 22:51:24 - Started 6040
+2025-01-25 02:47:38 - Stopping etp_punchdisplayservice.exe
+2025-01-25 02:47:38 - ProcessKill 6040
+2025-01-25 02:47:39 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-25 10:25:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-25 10:25:03 - Started 6184
+2025-01-25 17:52:48 - Stopping etp_punchdisplayservice.exe
+2025-01-25 17:52:48 - ProcessKill 6184
+2025-01-25 17:52:48 - Found child process: 6256 Name: conhost.exe
+2025-01-25 17:52:48 - Found child process: 7480 Name: node.exe
+2025-01-25 17:52:48 - Stopping process 6256
+2025-01-25 17:52:48 - Send SIGINT 6256
+2025-01-25 17:52:48 - SIGINT to 6256 failed - Killing as fallback
+2025-01-25 17:52:48 - Stopping process 7480
+2025-01-25 17:52:48 - Send SIGINT 7480
+2025-01-25 17:52:48 - SIGINT to 7480 failed - Killing as fallback
+2025-01-25 17:52:48 - Stopping process 6184
+2025-01-25 17:52:48 - Send SIGINT 6184
+2025-01-25 17:52:48 - SIGINT to 6184 failed - Killing as fallback
+2025-01-25 17:52:48 - Finished etp_punchdisplayservice.exe
+2025-01-27 10:19:05 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-27 10:19:05 - Started 6224
+2025-01-27 18:33:53 - Stopping etp_punchdisplayservice.exe
+2025-01-27 18:33:53 - ProcessKill 6224
+2025-01-27 18:33:53 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-28 10:00:23 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-28 10:00:23 - Started 6148
+2025-01-28 18:35:22 - Stopping etp_punchdisplayservice.exe
+2025-01-28 18:35:22 - ProcessKill 6148
+2025-01-28 18:35:23 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-28 23:13:08 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-28 23:13:08 - Started 6088
+2025-01-29 01:30:09 - Stopping etp_punchdisplayservice.exe
+2025-01-29 01:30:09 - ProcessKill 6088
+2025-01-29 01:30:09 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-29 01:35:57 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-29 01:35:57 - Started 5480
+2025-01-29 19:03:35 - Stopping etp_punchdisplayservice.exe
+2025-01-29 19:03:35 - ProcessKill 5480
+2025-01-29 19:03:36 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-30 09:55:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-30 09:55:18 - Started 6184
+2025-01-30 10:24:49 - Stopping etp_punchdisplayservice.exe
+2025-01-30 10:24:49 - ProcessKill 6184
+2025-01-30 10:24:49 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-30 10:25:31 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-30 10:25:31 - Started 6124
+2025-01-30 19:52:57 - Stopping etp_punchdisplayservice.exe
+2025-01-30 19:52:57 - ProcessKill 6124
+2025-01-30 19:52:58 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-30 23:26:33 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-30 23:26:33 - Started 6100
+2025-01-31 00:40:57 - Stopping etp_punchdisplayservice.exe
+2025-01-31 00:40:57 - ProcessKill 6100
+2025-01-31 00:40:57 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-31 00:41:53 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-31 00:41:53 - Started 5952
+2025-01-31 01:14:57 - Stopping etp_punchdisplayservice.exe
+2025-01-31 01:14:57 - ProcessKill 5952
+2025-01-31 01:14:57 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-01-31 01:20:46 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-01-31 01:20:46 - Started 5972
+2025-01-31 18:39:15 - Stopping etp_punchdisplayservice.exe
+2025-01-31 18:39:15 - ProcessKill 5972
+2025-01-31 18:39:15 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-01 10:12:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-01 10:12:04 - Started 5092
+2025-02-01 17:40:24 - Stopping etp_punchdisplayservice.exe
+2025-02-01 17:40:24 - ProcessKill 5092
+2025-02-01 17:40:24 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-02 21:24:58 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-02 21:24:58 - Started 5232
+2025-02-03 18:45:43 - Stopping etp_punchdisplayservice.exe
+2025-02-03 18:45:43 - ProcessKill 5232
+2025-02-03 18:45:43 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-04 10:28:45 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-04 10:28:45 - Started 5572
+2025-02-04 18:31:02 - Stopping etp_punchdisplayservice.exe
+2025-02-04 18:31:02 - ProcessKill 5572
+2025-02-04 18:31:02 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-05 10:01:10 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-05 10:01:10 - Started 6140
+2025-02-05 19:01:23 - Stopping etp_punchdisplayservice.exe
+2025-02-05 19:01:23 - ProcessKill 6140
+2025-02-05 19:01:24 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-06 10:08:50 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-06 10:08:50 - Started 5912
+2025-02-06 18:21:02 - Stopping etp_punchdisplayservice.exe
+2025-02-06 18:21:02 - ProcessKill 5912
+2025-02-06 18:21:03 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-07 10:12:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-07 10:12:07 - Started 5188
+2025-02-07 18:28:36 - Stopping etp_punchdisplayservice.exe
+2025-02-07 18:28:36 - ProcessKill 5188
+2025-02-07 18:28:36 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-08 10:36:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-08 10:36:14 - Started 5948
+2025-02-08 17:09:19 - Stopping etp_punchdisplayservice.exe
+2025-02-08 17:09:19 - ProcessKill 5948
+2025-02-08 17:09:19 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2025-02-10 10:45:04 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Ujjawal\visitor_Display_iob\backend\server.js --scriptoptions= --log "ETP_PunchDisplayService wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-10 10:45:04 - Started 5928
+2025-02-10 17:30:41 - Stopping etp_punchdisplayservice.exe
+2025-02-10 17:30:41 - ProcessKill 5928
+2025-02-10 17:30:41 - Found child process: 6184 Name: conhost.exe
+2025-02-10 17:30:41 - Found child process: 7328 Name: node.exe
+2025-02-10 17:30:41 - Stopping process 6184
+2025-02-10 17:30:41 - Send SIGINT 6184
+2025-02-10 17:30:41 - SIGINT to 6184 failed - Killing as fallback
+2025-02-10 17:30:41 - Stopping process 7328
+2025-02-10 17:30:41 - Send SIGINT 7328
+2025-02-10 17:30:41 - SIGINT to 7328 failed - Killing as fallback
+2025-02-10 17:30:41 - Stopping process 5928
+2025-02-10 17:30:41 - Send SIGINT 5928
+2025-02-10 17:30:41 - SIGINT to 5928 failed - Killing as fallback
+2025-02-10 17:30:41 - Finished etp_punchdisplayservice.exe

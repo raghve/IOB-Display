@@ -1,0 +1,95 @@
+HTML:
+<div id="chart_div" class="chart-container"></div>
+
+CSS: .
+/* Chart Container Styling */
+.chart-container {
+  width: 100%;
+  height: 40rem; /* The chart will cover 90% of the viewport height */
+  padding: 10px; /* Padding around the chart */
+  border-radius: 10px; /* Rounded corners for a smooth look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* White background */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  margin: 0 auto; /* Centering the chart */
+}
+
+/* Make the chart responsive */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 30rem; /* Adjust the height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    height: 28rem; /* Further reduce height for mobile screens */
+    padding: 5px; /* Less padding on smaller screens */
+  }
+}
+
+
+
+// Progress value between 0 and 1
+  
+    loadGoogleCharts(): void {
+      google.charts.load('current', { packages: ['corechart', 'bar'] });
+    }
+
+    prepareAndDrawChart(): void {
+      google.charts.setOnLoadCallback(() => this.drawStackedChart());
+    }
+  
+    drawStackedChart(): void {
+      // if (!this.leaveBalanceData || this.leaveBalanceData.length === 0) {
+      //   console.warn('No leave balance data available to display.');
+      //   return;
+      // }
+    
+      const chartDiv = document.getElementById('chart_div');
+      if (!chartDiv) {
+        console.error('Chart container element not found!');
+        return;
+      }
+    
+      const data = new google.visualization.DataTable();
+    
+      // Define columns
+      data.addColumn('string', 'Leave Code');
+      data.addColumn('number', 'Consumed Leave');
+      data.addColumn('number', 'Balance Leave');
+    
+      // Map dynamic data to rows
+      const rows = this.leaveBalanceData.map((item) => {
+        const consumedLeave = Number(item.consumeLeave || 0);
+        const balanceLeave = Number(item.balanceLeave || 0);
+        const totalLeave = consumedLeave + balanceLeave;
+    
+        // Validate Total Leave = Consumed Leave + Balance Leave
+        // if (Number(item.accrualLeave || 0) !== totalLeave) {
+        //   console.warn(
+        //     `Mismatch in Total Leave for ${item.leaveCode}: Accrual = ${item.accrualLeave}, Calculated = ${totalLeave}`
+        //   );
+        // }
+    
+        return [item.leaveCode, consumedLeave, balanceLeave];
+      });
+    
+      data.addRows(rows);
+    
+      const options:google.visualization.ColumnChartOptions = {
+        // title: 'Leave Status by Code',
+        isStacked: true,
+        colors: ['#FF5733', '#33FF57'], // Example colors for Consumed and Balance Leave
+        vAxis: {
+          ticks: [0, 5, 10, 15]
+        },
+        legend: {
+          position: 'bottom', // Position the legend below the chart
+          alignment: 'center', // Center-align the legend (now properly typed)
+        },
+      };
+    
+      const chart = new google.visualization.ColumnChart(chartDiv);
+      chart.draw(data, options);
+    }

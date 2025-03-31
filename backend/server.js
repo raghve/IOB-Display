@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const fs = require('fs');
 const socketIo = require('socket.io');
+const sql = require('mssql')
 
 const app = express();
 const server = http.createServer(app);
@@ -14,18 +15,20 @@ const backendConfig = require('./backendConfig'); // Importing the backend confi
 
 
 const folderPath = backendConfig.folderPath; // Folder to watch
+const profileImgpath = backendConfig.profileImgpath;
+const sqlConfig = backendConfig.sqlConfig; // SQL configuration
 
 // Enable CORS for all domains (or specify a specific domain)
 app.use(cors({
   origin: backendConfig.frontendUrl, // Allow only the Angular app to access the backend
   methods: ['GET', 'POST'],
-  credentials: true // Enable cookies if needed
+  credentials: true 
 }));
 
 // Enable CORS
 const io = socketIo(server, {
   cors: {
-    origin: backendConfig.frontendUrl, // Angular app URL
+    origin: backendConfig.frontendUrl, 
     methods: ["GET", "POST"],
   },
 });
@@ -67,12 +70,16 @@ watcher.on('add', (filePath) => {
   try {
     const latestFileData = parseFilePath(filePath);
     console.log('Parsed File Data:', latestFileData);
+    // Paths for profile image 
+    const profileImagePath = path.join(profileImgpath, `${latestFileData.profileImageName}.jpg`);
 
     // Extract deviceId from filePath (modify logic based on folder structure)
     const pathParts = filePath.split(path.sep);
     const deviceId = pathParts[pathParts.length - 3]; // Adjust as needed
 
     console.log('Device ID:', deviceId);
+
+    
 
     // Read the file and convert to Base64
     fs.readFile(filePath, (err, data) => {
@@ -83,19 +90,32 @@ watcher.on('add', (filePath) => {
 
       const base64Image = `data:image/jpeg;base64,${data.toString('base64')}`;
 
+       // Read the profile image
+    fs.readFile(profileImagePath, (err, profileImageData) => {
+      let base64ProfileImage = null;
+      if (err) {
+        console.error('Error reading profile image1:', err);
+        base64ProfileImage = base64Image;
+      } else {
+        base64ProfileImage = `data:image/jpeg;base64,${profileImageData.toString('base64')}`;
+      }
+
       const payload = {
         deviceId,
         base64Image,
+        base64ProfileImage,
         name: latestFileData.name || null,
         companyName: latestFileData.companyName || null,
         department: latestFileData.department || null,
         expectedOutTime: latestFileData.expectedOutTime || null,
         type: latestFileData.type || null,
+        profileImageName: latestFileData.profileImageName || null
       };
 
       console.log('Emitted Payload:', payload);
       io.emit('file-added', payload);
     });
+  });
   } catch (error) {
     console.error('Error processing file:', error.message);
   }
@@ -157,7 +177,7 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
       const filePath = path.join(deviceFolderPath, latestFile);
       console.log('Filepath', filePath);
       //Name~CompanyName~Department~ExpectedOuttime~type
-     let [name = null, companyName = null, department = null, expectedOutTime = null, type = null] = latestFile.replace('.jpg', '').split('~');
+     let [name = null, companyName = null, department = null, expectedOutTime = null, type = null, profileImageName = null] = latestFile.replace('.jpg', '').split('~');
 
      
      name = formatName(name) || null;
@@ -165,6 +185,11 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
      department = department || null;
      expectedOutTime = formatTimestamp(expectedOutTime) || null;
      type = type || null;
+     profileImageName = profileImageName || null;
+
+
+    // Paths for profile image 
+    const profileImagePath = path.join(profileImgpath, `${profileImageName}.jpg`);
 
   // Read the image file and convert it to base64
      fs.readFile(filePath, (err, data) => {
@@ -173,21 +198,37 @@ app.get('/get-latest-image/:deviceId', (req, res) => {
       return res.status(500).send('Error reading image file.');
     }
 
-     const base64Image = data.toString('base64');
+    //  const base64Image = data.toString('base64');
+     const base64Image = `data:image/jpeg;base64,${data.toString('base64')}`;
+
+
+       // Read the profile image
+       fs.readFile(profileImagePath, (err, profileImageData) => {
+         console.log("Profile Image path :", profileImagePath)
+         let base64ProfileImage = '';
+         if (err) {
+           console.error('Error reading profile image2:', err);
+           base64ProfileImage = base64Image;
+         }else {
+          base64ProfileImage = `data:image/jpeg;base64,${profileImageData.toString('base64')}`;
+        }
 
     // Send the image in base64 format along with the details
      res.json({
-      base64Image: `data:image/jpeg;base64,${base64Image}`, // Sending the base64 encoded image
+      base64Image,
+      base64ProfileImage, // profile Image
       name ,
       companyName,
       department,
       expectedOutTime,
-      type
+      type,
+      profileImageName
      });
+    });
   });
 
     } catch (error) {
-      console.error('Error processing files:', error.message);
+      console.error('Error processing files1:', error.message);
       return res.status(500).send('Error processing files.');
     }
   });
@@ -219,7 +260,7 @@ function formatTimestamp(timestamp) {
 
 function parseFilePath(filePath) {
   const fileName = path.basename(filePath, '.jpg'); // Extract the file name without the extension
-  const [name, companyName, department, expectedOutTime, type] = fileName.split('~'); // Split by `~`
+  const [name, companyName, department, expectedOutTime, type, profileImageName] = fileName.split('~'); // Split by `~`
 
   return {
     name: formatName(name) || null,
@@ -227,8 +268,50 @@ function parseFilePath(filePath) {
     department : formatName(department) || null,
     expectedOutTime: formatTimestamp(expectedOutTime) || null, // Format expectedOutTime
     type: type || null ,
+    profileImageName: profileImageName || null
   };
 }
+
+// Endpoint to get Material QR Details from SQL DB
+app.get('/getmaterialList/:qrCodeId', async (req, res) => { 
+  const qrCodeId = req.params.qrCodeId;
+  const materialQuery = `select VM.MaterialType,VM.Quantity,VM.SerialNumber,VM.ItemScope,VM.Detail,ISNULL(RS.StatusName,'Pending') MaterialApprovesStatus 
+  from VMS.VisitorMaterial vm
+  INNER JOIN VMS.VisitorLog VL ON VM.VisitorLogID=VL.VisitorLogID
+  LEFT JOIN APP.RequestStatus RS ON VL.MaterialRequestStatusID=RS.RequestStatusID
+  WHERE VL.QRCodeID='${qrCodeId}' AND VL.MaterialRequestStatusID=1 AND vm.active=1`; // MSSQL
+
+  const detailsQuery = `select VM.FullName,ISNULL(VL.GatePassRefNo,'N/A') GatePassRefNo,VM.CompanyName,ISNULL(VL.IsVendor,0)IsVendor,
+		E.EmployeeName,E.Department,E.Designation from VMS.Visitor vm
+    INNER JOIN VMS.VisitorLog VL ON VM.VisitorID=VL.VisitorID
+    INNER JOIN EMP.VW_Employee E ON VL.MaterialApprovedBy=E.EmployeeID
+    WHERE VL.QRCodeID='${qrCodeId}' AND VL.MaterialRequestStatusID=1`
+
+
+  try {
+    const pool = await sql.connect(backendConfig.sqlConfig);
+
+    const materialResult = await pool.request().input('qrCodeId', sql.NVarChar, qrCodeId).query(materialQuery);
+    console.log("Material List :",materialResult.recordset);
+    // res.status(200).json(materialResult.recordset);
+
+    if (materialResult.recordset.length === 0) {
+      return res.status(404).json({ message: 'No material list found for the provided QR Code ID.' });
+    }
+
+    const detailsResult = await pool.request().input('qrCodeId', sql.NVarChar, qrCodeId).query(detailsQuery);
+    console.log("Details :",detailsResult.recordset);
+
+    //Return both Response in Single Response
+    return res.status(200).json({
+      materialList: materialResult.recordset,
+      details: detailsResult.recordset
+    });
+  } catch (err) {
+    console.log("Error in Get Material List :", err.message);
+  }
+
+});
 
 const PORT = backendConfig.port;
 const HOST = backendConfig.host;

@@ -8,9 +8,9 @@ This project allows you to set up a Node.js service for displaying punch data. F
 
 Copy the following files to the required directory:
 
-- `server.js`
-- `ETP_PunchDisplayService.js`
-- `BackendConfig.js`
+- Main Node Js File: Ex.-`server.js`
+- Service File: Ex.-`ETP_PunchDisplayService.js`
+- Config File: Ex.-`BackendConfig.js`
 - `BatchFiles` (Optional)
 
 ### 2. Edit the BackendConfig File

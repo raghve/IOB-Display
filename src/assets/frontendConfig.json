@@ -2,7 +2,7 @@
     "apiUrl": "http://localhost:3000", 
     "appTitle": "IOB Title",
     "dashboardTitle": "IOB Dashboard",
-    "brandImagePath": "./assets/images/iob.png",
+    "brandImagePath": "./assets/images/avtech.png",
     "noDataImage" : "./assets/images/no-data.png",
     "companyFlag": "iob"
 

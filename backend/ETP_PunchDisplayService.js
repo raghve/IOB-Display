@@ -1,10 +1,14 @@
 const { Service, EventLogger } = require('node-windows');
 
+const backendConfig = require('./backendConfig'); // Importing the backend configuration
+
+const scriptPath = backendConfig.scriptPath;
+
 // Create a new service object
 const svc = new Service({
   name: 'ETP_PunchDisplayService',
   description: 'ETP_PunchDisplayService backend application.',
-  script: 'D:\\Ujjawal\\visitor_Display_iob\\backend\\server.js', // Path to your Node.js application
+  script: scriptPath, // Path to your Node.js application
 });
 
 // Create an event logger
